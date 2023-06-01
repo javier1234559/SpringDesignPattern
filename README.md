@@ -42,13 +42,13 @@ Là một design pattern để loại bỏ sự phụ thuộc giữa các thành
 
 Mẫu Singleton được áp dụng cho đối tượng Bean, đồng thời được khởi tạo mặc định và quản lý bởi ApplicationContext. Nên ở ví dụ này chúng ta sẽ tạo một bean và in ra console để kiểm tra
 
-![](RackMultipart20230601-1-601ac0_html_4a86546175c77c73.png)
+![image](https://github.com/javier1234559/SpringDesignPattern/assets/101733700/6a9dbfb2-da78-49d9-96d5-a651c673851d)
 
-![](RackMultipart20230601-1-601ac0_html_8eb2343af42c4328.png)
+![image](https://github.com/javier1234559/SpringDesignPattern/assets/101733700/0d0ecad0-5574-445a-88d8-ce5250d2beeb)
 
 Kết quả nhận được:
 
-![](RackMultipart20230601-1-601ac0_html_282debe2436f84d4.png)
+![image](https://github.com/javier1234559/SpringDesignPattern/assets/101733700/9b071c95-3db6-4d44-afd2-872a0ababf42)
 
 Khi thực hiện gọi context.getBean(Bean.class), ApplicationContext kiểm tra xem đã có một đối tượng Bean trong bộ nhớ cache chưa. Nếu đã có, nó sẽ trả về đối tượng đó. Ngược lại, nếu chưa có, nó sẽ tạo một đối tượng mới từ lớp Bean, thêm vào bộ nhớ cache và trả về .
 
@@ -58,7 +58,7 @@ Bởi vì Singleton Pattern được áp dụng, chỉ có một phiên bản du
 
 Dependency Injection (DI) là một mẫu thiết kế chủ chốt trong Spring Framework, nó kết hợp với Inversion of Control (IoC) để giảm sự phụ thuộc vào các đối tượng và tự động tiêm các phụ thuộc một cách tự động, làm cho việc quản lý mã dễ dàng hơn.
 
-![](RackMultipart20230601-1-601ac0_html_4b321541a226ac21.png)
+![image](https://github.com/javier1234559/SpringDesignPattern/assets/101733700/4a4fc480-47bd-40b0-a39c-84a2c6cdc778)
 
 Trong ví dụ này, chúng ta thấy việc sử dụng Dependency Injection trong lớp `BeanService`. `BeanService` được chú thích với `@Service`, đây là một annotation trong Spring để đánh dấu lớp này như một thành phần (component).
 
@@ -66,11 +66,11 @@ Lớp `BeanService` có một trường dữ liệu `bean` được khai báo v�
 
 Constructor `BeanService` nhận một đối tượng `Bean` như một đối số. Khi tạo một đối tượng `BeanService`, Spring sẽ tự động tiêm một đối tượng `Bean` vào constructor này với Bean cũng đã được đánh dấu là một component ở ví dụ trước đó .
 
-![](RackMultipart20230601-1-601ac0_html_52a5ce16f61ccfbb.png)
+![image](https://github.com/javier1234559/SpringDesignPattern/assets/101733700/f0dc3f1a-42d0-4320-b5a6-082c98589614)
 
 Kết quả nhận được :
 
-![](RackMultipart20230601-1-601ac0_html_8528f41de37f98b8.png)
+![image](https://github.com/javier1234559/SpringDesignPattern/assets/101733700/87bd67cc-cb9e-42ff-b5b2-72fc9988b336)
 
 Tiếp theo, chúng ta lấy một đối tượng `BeanService` từ `ApplicationContext` bằng cách gọi `context.getBean(BeanService.class).Và ta thấy được Bean đã được tiêm thành công và hoạt đông bên trong BeanSerice.
 
@@ -80,15 +80,15 @@ Tiếp theo, chúng ta lấy một đối tượng `BeanService` từ `Applicati
 
 Để minh họa cho mẫu Proxy Pattern được JPA sử dụng để tạo nên lazy-loading . Chúng ta sẽ tạo một 2 lớp Entity và thực hiện lấy giá trị một thực thể đang liên kết đến nhiều thực thể .
 
-![](RackMultipart20230601-1-601ac0_html_2b56c56eb9e2f2ee.png)
+![image](https://github.com/javier1234559/SpringDesignPattern/assets/101733700/c02de738-bc37-4d2e-b8bc-a7813bcbe341)
 
-![](RackMultipart20230601-1-601ac0_html_82cba4a143a6c85c.png)
+![image](https://github.com/javier1234559/SpringDesignPattern/assets/101733700/02c8b429-a65b-4ae0-8f69-c10d827e8de2)
 
-![](RackMultipart20230601-1-601ac0_html_89bde39ff8fb93f0.png)
+![image](https://github.com/javier1234559/SpringDesignPattern/assets/101733700/6045bb79-1497-4d68-93da-13da73896a30)
 
 Kết quả :
 
-![](RackMultipart20230601-1-601ac0_html_aea0eea69eec5f25.png)
+![image](https://github.com/javier1234559/SpringDesignPattern/assets/101733700/f7cb754b-831a-4e62-88e5-adeca26909ff)
 
 Ở ví dụ trên ta thực hiện sử dụng một lớp EntityManager đây là là một thành phần quan trọng trong JPA (Java Persistence API) và được sử dụng để quản lý các thao tác liên quan đến cơ sở dữ liệu. Trong ví dụ này, chúng ta sử dụng EntityManager để tạo và lưu trữ dữ liệu vào cơ sở dữ liệu H2.và thêm các giá trị tương ứng . Sau đó lấy log các giá trị product từ thực thể Category bằng 2 cách em.getReference() và em.find() .
 
@@ -100,13 +100,13 @@ Ta có thể thấy là đối với thực thể được lấy bằng em.getRe
 
 Mẫu Template Method được sử dụng trong JPA , để minh họa cho điều này chúng ta tạo một Repository kế thừa
 
-![](RackMultipart20230601-1-601ac0_html_3263f151a1847dfc.png)
+![image](https://github.com/javier1234559/SpringDesignPattern/assets/101733700/96ae0b85-26bb-4c7f-a4ae-5a6169e8a882)
 
-![](RackMultipart20230601-1-601ac0_html_6ae7fa0164f6767e.png)
+![image](https://github.com/javier1234559/SpringDesignPattern/assets/101733700/bd8965df-209c-40c3-9049-e94107381181)
 
 Kết quả nhận được là :
 
-![](RackMultipart20230601-1-601ac0_html_5047b21ea20b0f6f.png)
+![image](https://github.com/javier1234559/SpringDesignPattern/assets/101733700/a39b5cee-3b33-4648-ba81-1cf8192b4d94)
 
 Trong trường hợp này, ProductRepository đã kế thừa từ JpaRepository, một interface trong Spring Data JPA. JpaRepository áp dụng mẫu Method Pattern và cung cấp một tập hợp các phương thức chuyên biệt để thao tác với cơ sở dữ liệu, bao gồm save(), findById(), delete() và nhiều phương thức khác.
 
